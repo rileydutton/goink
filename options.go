@@ -116,6 +116,7 @@ func (c *options) list() (os []*opt) {
 	for _, opt := range c.opts {
 		// condition test
 		if opt.condition != nil {
+
 			b, err := opt.condition.Bool(c.story.vars)
 			if err != nil {
 				panic(err)
