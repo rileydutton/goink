@@ -115,6 +115,10 @@ type Story struct {
 	ln int
 }
 
+func (s *Story) CurrentVars() map[string]interface{} {
+	return s.vars
+}
+
 // Resume the story
 func (s *Story) Resume(ctx *Context) (sec *Section, err *ErrInk) {
 	s.mux.Lock()
